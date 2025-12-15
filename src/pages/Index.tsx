@@ -280,7 +280,7 @@ export default function Index() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Адрес</h3>
-                    <p className="text-muted-foreground">г. Москва, ул. Примерная, д. 123</p>
+                    <p className="text-muted-foreground">г. Москва, Дмитровское шоссе, д. 30, к. 1</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
