@@ -155,9 +155,17 @@ export default function Index() {
                 </Button>
               </DialogContent>
             </Dialog>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
-              <Icon name="Phone" className="mr-2" />
-              8 (920) 166-64-42
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform" asChild>
+              <a href="tel:89201666442">
+                <Icon name="Phone" className="mr-2" />
+                8 (920) 166-64-42
+              </a>
+            </Button>
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 hover:scale-105 transition-transform" asChild>
+              <a href="https://t.me/+wlzq8TZXH-MyYjEy" target="_blank" rel="noopener noreferrer">
+                <Icon name="Send" className="mr-2" />
+                Наши работы в Telegram
+              </a>
             </Button>
           </div>
         </div>
@@ -299,6 +307,22 @@ export default function Index() {
                   <div>
                     <h3 className="font-semibold mb-1">Режим работы</h3>
                     <p className="text-muted-foreground">Пн-Вс: 10:00 - 21:00</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Send" className="text-secondary" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Telegram</h3>
+                    <a 
+                      href="https://t.me/+wlzq8TZXH-MyYjEy" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-secondary transition-colors underline"
+                    >
+                      Наши работы в канале
+                    </a>
                   </div>
                 </div>
               </CardContent>
