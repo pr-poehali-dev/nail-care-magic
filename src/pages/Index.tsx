@@ -41,6 +41,10 @@ export default function Index() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isReviewDialogOpen, setIsReviewDialogOpen] = useState(false);
+  const [reviewName, setReviewName] = useState('');
+  const [reviewText, setReviewText] = useState('');
+  const [reviewRating, setReviewRating] = useState(5);
 
   const handleBooking = () => {
     if (selectedService && selectedMaster && selectedTime && name && phone) {
@@ -51,6 +55,20 @@ export default function Index() {
       setSelectedTime('');
       setName('');
       setPhone('');
+    }
+  };
+
+  const handleReviewSubmit = () => {
+    if (reviewName && reviewText) {
+      alert(`Спасибо за отзыв!
+
+Имя: ${reviewName}
+Оценка: ${reviewRating} звёзд
+Отзыв: ${reviewText}`);
+      setIsReviewDialogOpen(false);
+      setReviewName('');
+      setReviewText('');
+      setReviewRating(5);
     }
   };
 
@@ -269,6 +287,72 @@ export default function Index() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="text-center mt-12">
+            <Dialog open={isReviewDialogOpen} onOpenChange={setIsReviewDialogOpen}>
+              <DialogTrigger asChild>
+                <Button size="lg" className="hover:scale-105 transition-transform">
+                  <Icon name="MessageSquare" className="mr-2" />
+                  Оставить отзыв
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[500px]">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl">Оставить отзыв</DialogTitle>
+                  <DialogDescription>
+                    Поделитесь своими впечатлениями о нашей работе
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4 py-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="review-name">Ваше имя</Label>
+                    <Input
+                      id="review-name"
+                      placeholder="Введите имя"
+                      value={reviewName}
+                      onChange={(e) => setReviewName(e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Оценка</Label>
+                    <div className="flex gap-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          key={star}
+                          type="button"
+                          onClick={() => setReviewRating(star)}
+                          className="transition-transform hover:scale-110"
+                        >
+                          <Icon
+                            name="Star"
+                            size={32}
+                            className={star <= reviewRating ? 'fill-accent text-accent' : 'text-muted-foreground'}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="review-text">Ваш отзыв</Label>
+                    <textarea
+                      id="review-text"
+                      placeholder="Расскажите о вашем опыте..."
+                      value={reviewText}
+                      onChange={(e) => setReviewText(e.target.value)}
+                      className="w-full min-h-[120px] px-3 py-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                </div>
+                <Button
+                  onClick={handleReviewSubmit}
+                  size="lg"
+                  className="w-full"
+                  disabled={!reviewName || !reviewText}
+                >
+                  Отправить отзыв
+                </Button>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
