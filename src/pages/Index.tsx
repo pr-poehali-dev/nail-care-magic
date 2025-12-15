@@ -276,7 +276,7 @@ export default function Index() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Контакты</h2>
             <p className="text-xl text-muted-foreground">Мы находимся в Тимирязевском районе</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-2xl mx-auto">
             <Card className="border-2">
               <CardHeader>
                 <CardTitle className="text-2xl">Адрес и контакты</CardTitle>
@@ -325,31 +325,6 @@ export default function Index() {
                     </a>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="text-2xl">Напишите нам</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div>
-                    <Label htmlFor="contact-name">Ваше имя</Label>
-                    <Input id="contact-name" placeholder="Введите имя" />
-                  </div>
-                  <div>
-                    <Label htmlFor="contact-phone">Телефон</Label>
-                    <Input id="contact-phone" placeholder="+7 (___) ___-__-__" />
-                  </div>
-                  <div>
-                    <Label htmlFor="message">Сообщение</Label>
-                    <Input id="message" placeholder="Ваше сообщение" />
-                  </div>
-                  <Button className="w-full" size="lg">
-                    Отправить
-                    <Icon name="Send" className="ml-2" size={18} />
-                  </Button>
-                </form>
               </CardContent>
             </Card>
           </div>
