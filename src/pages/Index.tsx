@@ -87,95 +87,12 @@ export default function Index() {
             Создаём идеальные ногти с любовью к деталям. Современные техники и стильный дизайн.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-              <DialogTrigger asChild>
-                <Button size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
-                  <Icon name="Calendar" className="mr-2" />
-                  Записаться онлайн
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[500px]">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl">Онлайн запись</DialogTitle>
-                  <DialogDescription>
-                    Выберите услугу, мастера и удобное время
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="space-y-4 py-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="service">Услуга</Label>
-                    <Select value={selectedService} onValueChange={setSelectedService}>
-                      <SelectTrigger id="service">
-                        <SelectValue placeholder="Выберите услугу" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {services.map(service => (
-                          <SelectItem key={service.id} value={service.name}>
-                            {service.name} — {service.price}₽
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="master">Мастер</Label>
-                    <Select value={selectedMaster} onValueChange={setSelectedMaster}>
-                      <SelectTrigger id="master">
-                        <SelectValue placeholder="Выберите мастера" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {masters.map(master => (
-                          <SelectItem key={master.id} value={master.name}>
-                            {master.name} — {master.specialty}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="time">Время</Label>
-                    <Select value={selectedTime} onValueChange={setSelectedTime}>
-                      <SelectTrigger id="time">
-                        <SelectValue placeholder="Выберите время" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {timeSlots.map(time => (
-                          <SelectItem key={time} value={time}>
-                            {time}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Ваше имя</Label>
-                    <Input
-                      id="name"
-                      placeholder="Введите имя"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Телефон</Label>
-                    <Input
-                      id="phone"
-                      placeholder="+7 (___) ___-__-__"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <Button 
-                  onClick={handleBooking} 
-                  size="lg" 
-                  className="w-full"
-                  disabled={!selectedService || !selectedMaster || !selectedTime || !name || !phone}
-                >
-                  Подтвердить запись
-                </Button>
-              </DialogContent>
-            </Dialog>
+            <Button size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-transform" asChild>
+              <a href="https://t.me/zaytesva9" target="_blank" rel="noopener noreferrer">
+                <Icon name="Calendar" className="mr-2" />
+                Записаться онлайн
+              </a>
+            </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform" asChild>
               <a href="tel:89201666442">
                 <Icon name="Phone" className="mr-2" />
