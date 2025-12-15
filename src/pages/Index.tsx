@@ -266,7 +266,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Контакты</h2>
-            <p className="text-xl text-muted-foreground">Мы находимся в центре города</p>
+            <p className="text-xl text-muted-foreground">Мы находимся в Тимирязевском районе</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="border-2">
