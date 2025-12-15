@@ -88,7 +88,7 @@ export default function Index() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-transform" asChild>
-              <a href="https://t.me/zaytesva9" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/zaytceva9" target="_blank" rel="noopener noreferrer">
                 <Icon name="Calendar" className="mr-2" />
                 Записаться онлайн
               </a>
