@@ -157,7 +157,7 @@ export default function Index() {
             </Dialog>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
               <Icon name="Phone" className="mr-2" />
-              +7 (999) 123-45-67
+              8 (920) 166-64-42
             </Button>
           </div>
         </div>
@@ -289,7 +289,7 @@ export default function Index() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Телефон</h3>
-                    <p className="text-muted-foreground">+7 (999) 123-45-67</p>
+                    <p className="text-muted-foreground">8 (920) 166-64-42</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
